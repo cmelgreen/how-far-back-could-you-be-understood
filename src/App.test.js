@@ -1,8 +1,21 @@
-import { render, screen } from '@testing-library/react';
 import App from './App';
+import Input from './Components/Input'
+import Results from './Components/Results'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+Describe('App', () => {
+    let shallow;
+
+    beforeAll(() => {
+      shallow = createShallow();
+    });
+
+    test('Basic render', () => {
+        shallow(<App />)
+    })
+
+    test('Render children', () => {
+        const app = shallow(<App />)
+        expect(app.containsMatchingElement(<Input />)).toEqual(true)
+        expect(app.containsMatchingElement(<Results />)).toEqual(true)
+    })
 });

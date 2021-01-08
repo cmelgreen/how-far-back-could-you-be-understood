@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import CssBaseline from '@material-ui/core/CssBaseline'
+import Typography from '@material-ui/core/Typography'
+
+import Input from './Components/Input'
+import Results from './Components/Results'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CssBaseline>
+      <Box>
+        <Typography>You could probably understand Shakespeare, but would he be able to understand you?</Typography>
+        <Typography>Use Merriam-Webster's first recorded usage to see how far back your words and ideas could be understood</Typography>
+      </Box>
+      <Input />
+      <Results />
+    </CssBaseline>
   );
 }
 
