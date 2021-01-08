@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/how-far-back-could-you-be-understood/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/how-far-back-could-you-be-understood/static/js/main.7212499c.chunk.js",
+    "main.js.map": "/how-far-back-could-you-be-understood/static/js/main.7212499c.chunk.js.map",
+    "runtime-main.js": "/how-far-back-could-you-be-understood/static/js/runtime-main.9710fb44.js",
+    "runtime-main.js.map": "/how-far-back-could-you-be-understood/static/js/runtime-main.9710fb44.js.map",
+    "static/js/2.cedd00b9.chunk.js": "/how-far-back-could-you-be-understood/static/js/2.cedd00b9.chunk.js",
+    "static/js/2.cedd00b9.chunk.js.map": "/how-far-back-could-you-be-understood/static/js/2.cedd00b9.chunk.js.map",
+    "static/js/3.dd18fd9f.chunk.js": "/how-far-back-could-you-be-understood/static/js/3.dd18fd9f.chunk.js",
+    "static/js/3.dd18fd9f.chunk.js.map": "/how-far-back-could-you-be-understood/static/js/3.dd18fd9f.chunk.js.map",
+    "index.html": "/how-far-back-could-you-be-understood/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/how-far-back-could-you-be-understood/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.cedd00b9.chunk.js.LICENSE.txt": "/how-far-back-could-you-be-understood/static/js/2.cedd00b9.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/how-far-back-could-you-be-understood/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9710fb44.js",
+    "static/js/2.cedd00b9.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.7212499c.chunk.js"
+  ]
+}
