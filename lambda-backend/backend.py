@@ -1,6 +1,7 @@
 import urllib.request
 import json
-import regex as re
+import regex
+import boto3
 
 def lambda_handler(event, context):
     try: 
@@ -18,8 +19,16 @@ def lambda_handler(event, context):
             'error': repr(e)
         })
 
-api = 'https://www.dictionaryapi.com/api/v3/references/collegiate/json/{word}?key={token}'
 
+def get_token():
+    ssm = boto3.client('ssm')
+    param = ssm.get_parameter(Name='/how-far-back/dictionary-api-token', WithDecryption=True)
+
+    return param['Parameter']['value']
+    
+
+api = 'https://www.dictionaryapi.com/api/v3/references/collegiate/json/{word}?key={token}'
+token = get_token()
 
 def api_path(word, token):
     return api.format(word=word, token=token)
@@ -36,7 +45,7 @@ def earliest_use(entries):
     return min([clean_date(entry['date']) for entry in entries if 'date' in entry])
 
 def clean_date(date_string):
-    date = int(re.search('[0-9]+', date_string).group())
+    date = int(regex.search('[0-9]+', date_string).group())
 
     # quick and dirty conversion of centuries 
     if date < 100:

@@ -6,6 +6,7 @@
 .pnp.js
 
 # testing
+__pycache__/
 /coverage
 
 # production
@@ -17,6 +18,11 @@
 .env.development.local
 .env.test.local
 .env.production.local
+
+# dev
+.eslintcache
+.vscode/
+word-histories.code-workspace
 
 npm-debug.log*
 yarn-debug.log*
