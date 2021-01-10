@@ -10,46 +10,10 @@ def lambda_handler(event, context):
         words = event['queryStringParameters']['words'].split(',')
         first_uses = parallelize(fetch_and_find_earliest_use, words)
 
-        results = dict()
-        for use in first_uses:
-            results.update(use)
-
-        return lambda_response(200, results)
+        return lambda_response(200, first_uses)
 
     except Exception as e:
         return lambda_response(400, repr(e))
-
-def parallelize(f, args):
-        processes = []
-        parent_connections = []
-
-        def parallel_factory(f):
-            def parallel_f(conn, arg):
-                conn.send(f(arg))
-                conn.close()
-            
-            return parallel_f
-
-        parallel_f = parallel_factory(f)
-        
-        for arg in args:            
-            parent_conn, child_conn = Pipe()
-            parent_connections.append(parent_conn)
-
-            process = Process(target=parallel_f, args=(child_conn, arg))
-            processes.append(process)
-
-        for process in processes:
-            process.start()
-
-        for process in processes:
-            process.join()
-
-        results = []
-        for parent_connection in parent_connections:
-            results.append(parent_connection.recv())
-
-        return results
         
 def lambda_response(code, body):
     return {
@@ -82,7 +46,7 @@ def api_path(word, token):
     return api.format(word=word, token=token)
 
 def fetch_and_find_earliest_use(word):
-    return {word: earliest_use(fetch_word(word))}
+    return {"word": word, "firstUse": earliest_use(fetch_word(word))}
 
 def fetch_word(word):
     with urllib.request.urlopen(api_path(word, token)) as url:
@@ -104,3 +68,35 @@ def clean_date(date_string):
         date = (date-1) * 100
     
     return date
+
+def parallelize(f, args):
+        processes = []
+        parent_connections = []
+
+        def parallel_factory(f):
+            def parallel_f(conn, arg):
+                conn.send(f(arg))
+                conn.close()
+            
+            return parallel_f
+
+        parallel_f = parallel_factory(f)
+        
+        for arg in args:            
+            parent_conn, child_conn = Pipe()
+            parent_connections.append(parent_conn)
+
+            process = Process(target=parallel_f, args=(child_conn, arg))
+            processes.append(process)
+
+        for process in processes:
+            process.start()
+
+        for process in processes:
+            process.join()
+
+        results = []
+        for parent_connection in parent_connections:
+            results.append(parent_connection.recv())
+
+        return results
