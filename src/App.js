@@ -1,8 +1,10 @@
 import CssBaseline from '@material-ui/core/CssBaseline'
+import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
 
-import Input from './Components/Input'
-import Results from './Components/Results'
+import Input from './Components/Input/Input'
+
+//import Results from './Components/Results'
 
 function App() {
   return (
@@ -12,7 +14,6 @@ function App() {
         <Typography>Use Merriam-Webster's first recorded usage to see how far back your words and ideas could be understood</Typography>
       </Box>
       <Input />
-      <Results />
     </CssBaseline>
   );
 }

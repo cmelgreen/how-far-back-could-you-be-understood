@@ -1,4 +1,4 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
@@ -6,7 +6,6 @@
 .pnp.js
 
 # testing
-__pycache__/
 /coverage
 
 # production
@@ -18,11 +17,12 @@ __pycache__/
 .env.development.local
 .env.test.local
 .env.production.local
+__pycache__/
 
 # dev
 .eslintcache
 .vscode/
-word-histories.code-workspace
+*.code-workspace
 
 npm-debug.log*
 yarn-debug.log*
@@ -30,3 +30,7 @@ yarn-error.log*
 
 # credentials
 credentials.*
+
+# infrastructure-as-code
+terraform*
+.terraform/

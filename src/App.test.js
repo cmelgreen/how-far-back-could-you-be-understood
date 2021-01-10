@@ -1,6 +1,6 @@
 import App from './App';
-import Input from './Components/Input'
-import Results from './Components/Results'
+import Input from './Components/Input/Input'
+//import Results from './Components/Results'
 
 Describe('App', () => {
     let shallow;
