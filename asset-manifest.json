@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/how-far-back-could-you-be-understood/static/js/main.be336079.chunk.js",
-    "main.js.map": "/how-far-back-could-you-be-understood/static/js/main.be336079.chunk.js.map",
+    "main.js": "/how-far-back-could-you-be-understood/static/js/main.a13b3bcc.chunk.js",
+    "main.js.map": "/how-far-back-could-you-be-understood/static/js/main.a13b3bcc.chunk.js.map",
     "runtime-main.js": "/how-far-back-could-you-be-understood/static/js/runtime-main.65cf8804.js",
     "runtime-main.js.map": "/how-far-back-could-you-be-understood/static/js/runtime-main.65cf8804.js.map",
     "static/js/2.a80cfa11.chunk.js": "/how-far-back-could-you-be-understood/static/js/2.a80cfa11.chunk.js",
@@ -14,6 +14,6 @@
   "entrypoints": [
     "static/js/runtime-main.65cf8804.js",
     "static/js/2.a80cfa11.chunk.js",
-    "static/js/main.be336079.chunk.js"
+    "static/js/main.a13b3bcc.chunk.js"
   ]
 }
