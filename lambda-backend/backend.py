@@ -55,7 +55,7 @@ def lambda_response(code, body):
     return {
         "isBase64Encoded": False,
         "statusCode": code,
-        "headers": {},
+        "headers": {"Access-Control-Allow-Origin": "*"},
         "multiValueHeaders": {},
         "body": json.dumps(body)
     }
